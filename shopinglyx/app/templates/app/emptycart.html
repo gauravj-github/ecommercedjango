@@ -1,0 +1,46 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}checkout{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+     <h3 class="text-center mb-5">You have no produt in your cart please add any product </h3>
+<div class="text-center">
+    <img src="{% static 'app/images/emptycart.png'%}" alt="" class="img-fluid img-thumbnail w-25">
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="m-3">
+    <h2>ShoppingX Deals of The Day</h2>
+    <!-- Slider 1 -->
+    <div class="owl-carousel" id="slider1">
+     {% for bw in  bottomwears %}
+     <a href="{% url 'product-detail' bw.id %}" class="btn"><div class="item"><img src="{{bw.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{bw.title}}</span><br><span class="fs-5">Rs. {{bw.discounted_price}}</span></div></a>
+     {% endfor %}
+    </div>
+   </div>
+   <hr>
+   <div class="m-3">
+       <h2>ShoppingX Deals of The Day</h2>
+       <!-- Slider 1 -->
+       <div class="owl-carousel" id="slider1">
+        {% for bw in  M %}
+        <a href="{% url 'product-detail' bw.id %}" class="btn"><div class="item"><img src="{{bw.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{bw.title}}</span><br><span class="fs-5">Rs. {{bw.discounted_price}}</span></div></a>
+        {% endfor %}
+       </div>
+      </div>
+      <hr>
+      <div class="m-3">
+          <h2>ShoppingX Deals of The Day</h2>
+          <!-- Slider 1 -->
+          <div class="owl-carousel" id="slider1">
+           {% for bw in  BW %}
+           <a href="{% url 'product-detail' bw.id %}" class="btn"><div class="item"><img src="{{bw.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{bw.title}}</span><br><span class="fs-5">Rs. {{bw.discounted_price}}</span></div></a>
+           {% endfor %}
+          </div>
+         </div>
+         
+
+{% endblock main-content %}
